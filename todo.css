@@ -10,6 +10,7 @@ body {
 #task-form {
     width: 50%;
     margin: 20px auto;
+    max-width: min-content;
 }
 
 #task-form label {
