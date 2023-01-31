@@ -7,10 +7,10 @@ let Form = document.querySelector("#task-form")
 let uncompletedTasks = document.querySelector("#Uncompleted-tasks");
 let completedTasks = document.querySelector("#completed-tasks");
 
-let todos = fetchFromStorage(); // Call the fetchFromStorage function to get all todos
+let todos = fetchFromStorage(); 
 
 let newTodo = {
-    "id": Math.round(Math.random() * 10000), // Math functions - .random - generates a random decimal between 0 and 1
+    "id": Math.round(Math.random() * 10000), 
     "title": "",
     "description": "",
     "date": "",
@@ -32,13 +32,13 @@ submitNewTodo.addEventListener("click", function(event) {
     todos.push(newTodo);
     saveToStorage(JSON.stringify(todos));
 
-    // remove old values from the newTodo
+    
     newTodo.id = "";
     newTodo.title = "";
     newTodo.description = "";
     newTodo.date = "";
 
-    // reload page
+
     location.reload();
 })
 
@@ -47,7 +47,7 @@ Form.addEventListener("submit", function(event) {
     console.log(Form);
 })
 
-function fetchFromStorage() { // A function that fetches the todos from localStorage
+function fetchFromStorage() { 
     let storedTodos = JSON.parse(localStorage.getItem("todos"));
     if(storedTodos) {
         return storedTodos;
@@ -56,7 +56,7 @@ function fetchFromStorage() { // A function that fetches the todos from localSto
     }
 }
 
-function saveToStorage(todos) { // A function that saves todos to localStorage
+function saveToStorage(todos) { 
     localStorage.setItem("todos", todos);
 }
 
@@ -107,7 +107,6 @@ completeButtons.forEach(function(completeButton) {
     })
 })
 
-// Delete todo
 let deleteTodoButtons = document.querySelectorAll(".delete-todo");
 
 deleteTodoButtons.forEach(function(deleteButton) {

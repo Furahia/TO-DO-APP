@@ -5,7 +5,7 @@ body {
     background-color: rgb(87, 50, 7);
 }
 .text-center {
-    text-align: center;
+    align-items: center;
 }
 #task-form {
     width: 50%;
